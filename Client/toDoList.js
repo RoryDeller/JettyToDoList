@@ -1,4 +1,4 @@
-let address = 'http://172.25.103.100:8080';
+let address = 'http://localhost:8080';
 let myList = '';
 let newItem = '';
 
