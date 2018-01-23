@@ -10,9 +10,9 @@ public class Main {
 
         myList = new ArrayList<>();
 
-        myList.add("<strike>One</strike>");
-        myList.add("<strike>Two</strike>");
-        myList.add("<strike>Three</strike>");
+        myList.add("One");
+        myList.add("Two");
+        myList.add("Three");
 
         int port = 8080;
         Server s = new Server(port);
