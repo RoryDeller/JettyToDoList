@@ -41,18 +41,20 @@ public class RequestHandler extends AbstractHandler {
                 if (keyAndValue.length == 2) {
                     switch (keyAndValue[0]) {
                         case "first":
-                            Main.myList.add(0, keyAndValue[1]);
+                            Main.myList.add(0, new Task(keyAndValue[1], false));
                             break;
                         case "last":
-                            Main.myList.add(keyAndValue[1]);
+                            Main.myList.add(new Task(keyAndValue[1], false));
                             break;
                     }
                 }
 
             } else if (path.equals("/delete")) {
 
-                String item = data.toString();
-                Main.myList.remove(item);
+                String item = data.toString()
+                        .replace("<strike>", "")
+                        .replace("</strike>", "");
+                Main.myList.removeIf(x -> x.getDescription().equals(item));
 
             } else if (path.equals("/clear")) {
 
@@ -64,7 +66,11 @@ public class RequestHandler extends AbstractHandler {
 
             }
 
-            response.getWriter().print(String.join(",", Main.myList));
+            String responseText = "";
+            for (Task t: Main.myList) {
+                responseText += t.toString() + ",";
+            }
+            response.getWriter().print(responseText);
 
         } else if (method.equals("GET")) {
 

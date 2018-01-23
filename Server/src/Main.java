@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static ArrayList<String> myList;
+    public static ArrayList<Task> myList;
 
     public static void main(String[] args) throws Exception {
 
         myList = new ArrayList<>();
 
-        myList.add("One");
-        myList.add("Two");
-        myList.add("Three");
+        myList.add(new Task("Task One", true));
+        myList.add(new Task("Task Two", false));
+        myList.add(new Task("Task Three", false));
 
         int port = 8080;
         Server s = new Server(port);
