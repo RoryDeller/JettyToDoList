@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <meta charset='UTF-8'>
+        <title>Title</title>
+        <script src='jquery-3.3.1.min.js'></script>
+        <script src='tolist.js'></script>
+    </head>
+
+    <body>
+
+        <h1>My To-Do List</h1>
+
+        <div>
+            <ul id='myList'>
+                <!-- Empty List -->
+            </ul>
+        </div>
+
+        <div>
+            <input id='newItem'/>
+            <input type='button' onclick='addFirst();' value='Add First' />
+            <input type='button' onclick='addLast();' value='Add Last' />
+            <input type='button' onclick='clearList();' value='Clear Last' />
+        </div>
+
+    </body>
+
+</html>
