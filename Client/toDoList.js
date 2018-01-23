@@ -25,7 +25,7 @@ function populateList(values) {
     }
 }
 
-function addFirst(position) {
+function addFirst() {
     $.post(address + '/add', 'first=' + newItem.val(),
         function(data, status) {
             if (status === 'success') populateList(data);
@@ -33,7 +33,7 @@ function addFirst(position) {
     );
 }
 
-function addLast(position) {
+function addLast() {
     $.post(address + '/add', 'last=' + newItem.val(),
         function(data, status) {
             if (status === 'success') populateList(data);
